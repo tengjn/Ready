@@ -1055,3 +1055,10 @@ class LlamaModel(LlamaPreTrainedModel):
             attn = q @ k.transpose(0, 2, 1) * scale ## [B, num_head, N1, dim  / num_head] @ [B, num_head, dim / num_head, N2] ---> [B, num_head, N1, N2]
             attn = attn.softmax()  ## [B, num_head, N1, N2]
             q = attn @ v  ## [B, num_head, N1, N2] @ [B, num_head, N2, dim / num_head] ---> [B, num_head, N1, dim / num_head]
+
+
+# The isBadVersion API is already defined for you.
+# @param version, an integer
+# @return a bool
+# def isBadVersion(version):
+## find the first wrong version
